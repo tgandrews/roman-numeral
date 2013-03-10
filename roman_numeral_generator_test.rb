@@ -28,4 +28,10 @@ class RomanNumeralGeneratorTest < Test::Unit::TestCase
 		assert_equal("MCCXXXIV", RomanNumeralGenerator.generate(1234))
 		assert_equal("MMMCMXCIX", RomanNumeralGenerator.generate(3999))
 	end
+
+	def test_should_not_accept_bad_data
+		assert_raise(Exception) { RomanNumeralGenerator.generate("hello") }
+		assert_raise(Exception) { RomanNumeralGenerator.generate(4000) }
+		assert_raise(Exception) { RomanNumeralGenerator.generate(-1) }
+	end
 end

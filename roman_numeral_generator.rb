@@ -17,7 +17,11 @@ class RomanNumeralGenerator
 	
 	# Returns roman numeral representation of integer input
 	def self.generate (to_convert)
-		
+	
+		# Firewalling
+		raise Exception.new("Only numeric values expected") if !(to_convert.is_a? Numeric)
+		raise Exception.new("Only numeric values between 1 and 3999 expected") if (to_convert > 3999 || to_convert < 1)
+
 		#Find the highest roman numeral that is less than or equal to the current input
 		current_roman_numeral_value = 1
 		ROMAN_NUMERALS.each do |key, value|
