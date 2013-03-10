@@ -18,4 +18,9 @@ class RomanNumeralGeneratorTest < Test::Unit::TestCase
 		assert_equal("CM", RomanNumeralGenerator.generate(900))
 		assert_equal("M", RomanNumeralGenerator.generate(1000))
 	end
+
+	def test_multiple_characters
+		assert_equal("II", RomanNumeralGenerator.generate(2))
+		assert_equal("MM", RomanNumeralGenerator.generate(2000))
+	end
 end

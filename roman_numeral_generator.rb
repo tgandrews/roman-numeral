@@ -15,7 +15,27 @@ class RomanNumeralGenerator
 		1000 => "M"
 	}
 	
+	# Returns roman numeral representation of integer input
 	def self.generate (to_convert)
-		return ROMAN_NUMERALS[to_convert]
+		
+		#Find the highest roman numeral that is less than or equal to the current input
+		current_roman_numeral_value = 1
+		ROMAN_NUMERALS.each do |key, value|
+			if key > to_convert
+				break
+			end
+			current_roman_numeral_value = key
+		end
+
+		# Number of times to output the roman numeral
+		number_of_times = to_convert / current_roman_numeral_value
+
+		result = ""
+		number_of_times.times do 
+			result += ROMAN_NUMERALS[current_roman_numeral_value]
+		end
+		
+		return result
+
 	end
 end
