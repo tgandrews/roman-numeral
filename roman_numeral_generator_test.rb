@@ -26,5 +26,6 @@ class RomanNumeralGeneratorTest < Test::Unit::TestCase
 
 	def test_complex_multi_character_numbers
 		assert_equal("MCCXXXIV", RomanNumeralGenerator.generate(1234))
+		assert_equal("MMMCMXCIX", RomanNumeralGenerator.generate(3999))
 	end
 end
