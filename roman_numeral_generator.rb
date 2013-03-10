@@ -29,10 +29,19 @@ class RomanNumeralGenerator
 
 		# Number of times to output the roman numeral
 		number_of_times = to_convert / current_roman_numeral_value
+		# For compliex values we have a remained
+		left_over = to_convert % current_roman_numeral_value
+
 
 		result = ""
+		# Add repeating characters to the output
 		number_of_times.times do 
 			result += ROMAN_NUMERALS[current_roman_numeral_value]
+		end
+
+		# Call the function recursively if we have anything left over
+		if left_over > 0
+			result += self.generate(left_over)
 		end
 		
 		return result
