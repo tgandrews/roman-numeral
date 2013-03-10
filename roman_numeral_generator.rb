@@ -33,7 +33,7 @@ class RomanNumeralGenerator
 
 		# Number of times to output the roman numeral
 		number_of_times = to_convert / current_roman_numeral_value
-		# For compliex values we have a remained
+		# For complex values we have a remainder
 		left_over = to_convert % current_roman_numeral_value
 
 
